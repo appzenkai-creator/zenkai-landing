@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenkai — Foco e Bem-estar Digital</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- SEO & Social Preview -->
+    <meta name="description" content="Zenkai - Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.">
+    <meta property="og:title" content="Zenkai — Foco e Bem-estar Digital">
+    <meta property="og:description" content="Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.">
+    <meta property="og:image" content="favicon.png">
+    <meta property="og:type" content="website">
+
+    <!-- Estilos CSS com Efeitos e Animações -->
+    <style>
+        :root {
+            --primary-blue: #0268a6;
+            --primary-blue-glow: rgba(2, 104, 166, 0.6);
+            --black: #000000;
+            --white: #ffffff;
+            --gray-text: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            /* Fundo com iluminação radial azulada estilo GitHub Dark */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(2, 104, 166, 0.35) 0%, transparent 70%),
+                radial-gradient(circle at 50% 100%, rgba(2, 104, 166, 0.15) 0%, transparent 60%);
+            color: var(--white);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+        }
+
+        /* Card Principal com efeito de vidro (Glassmorphism) */
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(2, 104, 166, 0.35);
+            border-radius: 24px;
+            padding: 40px 28px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(2, 104, 166, 0.2);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Logo com Animação Flutuante e Pulsar do Brilho */
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            object-fit: cover;
+            border: 2px solid var(--primary-blue);
+            animation: float 4s ease-in-out infinite, pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(2, 104, 166, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(2, 104, 166, 0.85); }
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            /* Gradiente do Branco para o Azul #0268a6 */
+            background: linear-gradient(135deg, #ffffff 30%, #0268a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            line-height: 1.5;
+            margin-bottom: 32px;
+        }
+
+        /* Container dos Botões */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Estilo Base do Botão com Efeito de Brilho Dinâmico (Shimmer) */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 14px;
+            font-size: 0.98rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        /* Efeito de Reflexo de Luz ao passar o mouse */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(30deg) translateY(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .btn:hover::after {
+            transform: rotate(30deg) translateY(100%);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Botão Destaque Principal (Azul #0268a6) */
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            box-shadow: 0 8px 20px rgba(2, 104, 166, 0.35);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 28px rgba(2, 104, 166, 0.6);
+            background-color: #0278c0;
+        }
+
+        /* Botões Secundários */
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.04);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(2, 104, 166, 0.15);
+            border-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-icon {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .btn-svg-icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* Divisor Neon */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(2, 104, 166, 0.5), transparent);
+            margin: 28px 0 20px 0;
+        }
+
+        /* Rodapé com Links Legais */
+        .footer-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 0.85rem;
+        }
+
+        .footer-link {
+            color: var(--gray-text);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .dot {
+            color: var(--primary-blue);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Logotipo animado com float e glow -->
+        <div class="logo-wrapper">
+            <img src="favicon.png" alt="Zenkai Logo" class="logo">
+        </div>
+
+        <h1>Zenkai</h1>
+        <p class="subtitle">Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.</p>
+
+        <!-- Botões de Ação -->
+        <div class="btn-group">
+            
+            <!-- 1. Google Play Store -->
+            <a href="https://play.google.com/store/apps/details?id=com.guardianbusiness.zenkai" target="_blank" rel="noopener" class="btn btn-primary">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L18.81,13.12C19.34,12.59 19.34,11.41 18.81,10.88L16.81,8.88L14.81,10.88L16.81,15.12M4.5,2.85L13.1,11.45L14.5,10.05L4.5,0.05C4.5,0.05 4.5,2.85 4.5,2.85M4.5,21.15L14.5,13.95L13.1,12.55L4.5,21.15Z" />
+                </svg>
+                Baixar na Play Store
+            </a>
+
+            <!-- 2. Apple App Store -->
+            <a href="https://apps.apple.com/app/id6790551584" target="_blank" rel="noopener" class="btn btn-secondary">
+                <svg class="btn-svg-icon" viewBox="0 0 24 24">
+                    <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.09,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
+                </svg>
+                Baixar na App Store
+            </a>
+
+            <!-- 3. Instagram com a imagem instagram.png -->
+            <a href="https://www.instagram.com/zenkai.br/" target="_blank" rel="noopener" class="btn btn-secondary">
+                <img src="instagram.png" alt="Instagram Logo" class="btn-icon">
+                Siga no Instagram
+            </a>
+            
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- 4 e 5. Links Legais -->
+        <footer class="footer-links">
+            <a href="termos.html" class="footer-link">Termos de Uso</a>
+            <span class="dot">•</span>
+            <a href="privacidade.html" class="footer-link">Política de Privacidade</a>
+        </footer>
+    </main>
+
+</body>
+</html>
