@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zenkai — Transforme seus Hábitos Digitais</title>
 
-    <!-- Google Fonts: Nunito -->
+    <!-- Google Fonts: Nunito & Fredoka (Semelhante à fonte Dingos) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Favicon (Mantido) -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -22,7 +22,7 @@
     <style>
         :root {
             --bg-ivory: #FAF6EE;
-            --text-dark: #1E293B;
+            --text-dark: #2D3748;
             --text-muted-dark: #475569;
             --card-blue-gradient: linear-gradient(135deg, #1cb0f6 0%, #005bb5 100%);
             --button-blue: #0268a6;
@@ -48,57 +48,81 @@
         }
 
         .container {
-            max-width: 1080px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 30px 24px;
         }
 
-        /* HERO SECTION */
+        /* HERO SECTION (LAYOUT 2 COLUNAS) */
         .hero {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px 0 60px 0;
+            padding-bottom: 50px;
         }
 
-        .brand-header {
+        /* LOGOTIPO NO CANTO ESQUERDO SUPERIOR */
+        .logo-wrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
+            margin-bottom: 30px;
         }
 
-        /* LOGOTIPO DESTAQUE EM CIMA (SEM TEXTO) */
         .logo-img {
-            width: 170px;
-            max-width: 80vw;
+            width: 210px;
+            max-width: 70vw;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.06));
             transition: transform 0.3s ease;
         }
 
         .logo-img:hover {
-            transform: scale(1.04);
+            transform: scale(1.03);
         }
 
+        /* GRID HERO: CELULAR À ESQUERDA, CONTEÚDO À DIREITA */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-left {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-mockup-img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+        }
+
+        .hero-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* TÍTULO COM ESTILO SEMELHANTE À FONTE DINGOS */
         .hero-headline {
-            font-size: 1.5rem;
-            font-weight: 800;
-            max-width: 620px;
-            margin-bottom: 36px;
-            color: var(--text-dark);
+            font-family: 'Fredoka', 'Nunito', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #333333;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
         }
 
-        /* GRUPO DE BOTÕES DUOLINGO-STYLE */
+        /* BOTÕES DE AÇÃO STACKED Á DIREITA */
         .button-group {
             display: flex;
             flex-direction: column;
             gap: 16px;
             width: 100%;
-            max-width: 360px;
-            margin-bottom: 50px;
+            max-width: 380px;
         }
 
         .btn {
@@ -114,14 +138,13 @@
             text-decoration: none;
             color: var(--white);
             background-color: var(--button-blue);
-            box-shadow: 0 5px 0 #00436d, 0 10px 20px rgba(2, 104, 166, 0.2);
+            box-shadow: 0 5px 0 #00436d, 0 10px 20px rgba(2, 104, 166, 0.18);
             transition: all 0.15s ease-in-out;
             overflow: hidden;
             border: none;
             cursor: pointer;
         }
 
-        /* Efeito Shimmer (Brilho Dinâmico) */
         .btn::after {
             content: '';
             position: absolute;
@@ -139,11 +162,10 @@
             20%, 100% { transform: translateX(100%) rotate(25deg); }
         }
 
-        /* Animação de Clique */
         .btn:hover {
             background-color: var(--button-blue-hover);
             transform: translateY(-2px);
-            box-shadow: 0 7px 0 #00436d, 0 12px 24px rgba(2, 104, 166, 0.3);
+            box-shadow: 0 7px 0 #00436d, 0 12px 24px rgba(2, 104, 166, 0.25);
         }
 
         .btn:active {
@@ -158,14 +180,7 @@
             flex-shrink: 0;
         }
 
-        /* MOCKUP DO CELULAR PRINCIPAL */
-        .hero-mockup {
-            width: 100%;
-            max-width: 380px;
-            margin: 0 auto;
-        }
-
-        /* ANIMAÇÃO DE FLUTUAÇÃO DOS ASSETS */
+        /* ANIMAÇÃO DE FLUTUAÇÃO DO CELULAR */
         .animated-asset {
             width: 100%;
             height: auto;
@@ -177,12 +192,12 @@
 
         .animated-asset:hover {
             transform: scale(1.03) translateY(-6px);
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-10px); }
         }
 
         /* SEÇÃO DE RECURSOS / CARDS AZUIS */
@@ -190,7 +205,7 @@
             display: flex;
             flex-direction: column;
             gap: 60px;
-            margin: 60px 0;
+            margin: 40px 0 60px 0;
         }
 
         .feature-card {
@@ -201,7 +216,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 40px;
-            box-shadow: 0 20px 40px rgba(0, 91, 181, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 91, 181, 0.18);
             color: var(--white);
         }
 
@@ -227,8 +242,9 @@
         }
 
         .feature-title {
+            font-family: 'Fredoka', 'Nunito', sans-serif;
             font-size: 2rem;
-            font-weight: 900;
+            font-weight: 700;
             line-height: 1.2;
             margin-bottom: 12px;
             text-transform: lowercase;
@@ -253,7 +269,7 @@
 
         /* FOOTER & MASCOTE */
         .footer {
-            margin-top: 80px;
+            margin-top: 60px;
             padding-top: 40px;
             border-top: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
@@ -314,14 +330,32 @@
             font-weight: 700;
         }
 
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .hero-headline {
-                font-size: 1.2rem;
+        /* RESPONSIVIDADE PARA CELULARES */
+        @media (max-width: 820px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .logo-wrapper {
+                justify-content: center;
             }
 
             .logo-img {
-                width: 140px;
+                width: 170px;
+            }
+
+            .hero-right {
+                align-items: center;
+            }
+
+            .hero-headline {
+                font-size: 1.6rem;
+            }
+
+            .button-group {
+                max-width: 100%;
             }
 
             .feature-card, .feature-card.reverse {
@@ -346,39 +380,43 @@
         
         <!-- HERO SECTION -->
         <header class="hero">
-            <!-- 1. logotipo.png (Destaque em cima, sem texto) -->
-            <div class="brand-header">
+            <!-- Logotipo em destaque no canto superior esquerdo -->
+            <div class="logo-wrapper">
                 <img src="logotipo.png" alt="Zenkai Logo" class="logo-img">
             </div>
 
-            <p class="hero-headline">
-                Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.
-            </p>
+            <!-- Layout split (Celular à esquerda, Título e Botões à direita) -->
+            <div class="hero-grid">
+                
+                <!-- LADO ESQUERDO: MOCKUP DO CELULAR -->
+                <div class="hero-left">
+                    <img src="screenshot1.png" alt="Zenkai App Preview" class="animated-asset hero-mockup-img">
+                </div>
 
-            <!-- BOTÕES DE AÇÃO -->
-            <div class="button-group">
-                <!-- 3. apple.png -->
-                <a href="https://apps.apple.com/app/id6790551584" target="_blank" rel="noopener" class="btn">
-                    <img src="apple.png" alt="Apple Store" class="btn-icon">
-                    Baixar na Apple Store
-                </a>
+                <!-- LADO DIREITO: TÍTULO DINGOS-STYLE + BOTÕES -->
+                <div class="hero-right">
+                    <h1 class="hero-headline">
+                        Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.
+                    </h1>
 
-                <!-- 4. android.png -->
-                <a href="https://play.google.com/store/apps/details?id=com.guardianbusiness.zenkai" target="_blank" rel="noopener" class="btn">
-                    <img src="android.png" alt="Play Store" class="btn-icon">
-                    Baixar na Play Store
-                </a>
+                    <div class="button-group">
+                        <a href="https://apps.apple.com/app/id6790551584" target="_blank" rel="noopener" class="btn">
+                            <img src="apple.png" alt="Apple Store" class="btn-icon">
+                            Baixar na Apple Store
+                        </a>
 
-                <!-- 5. instagram.png -->
-                <a href="https://www.instagram.com/zenkai.br/" target="_blank" rel="noopener" class="btn">
-                    <img src="instagram.png" alt="Instagram" class="btn-icon">
-                    Siga no Instagram
-                </a>
-            </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.guardianbusiness.zenkai" target="_blank" rel="noopener" class="btn">
+                            <img src="android.png" alt="Play Store" class="btn-icon">
+                            Baixar na Play Store
+                        </a>
 
-            <!-- 2. screenshot1.png -->
-            <div class="hero-mockup">
-                <img src="screenshot1.png" alt="Zenkai App Preview" class="animated-asset">
+                        <a href="https://www.instagram.com/zenkai.br/" target="_blank" rel="noopener" class="btn">
+                            <img src="instagram.png" alt="Instagram" class="btn-icon">
+                            Siga no Instagram
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </header>
 
@@ -395,7 +433,6 @@
                     </p>
                 </div>
                 <div class="feature-media">
-                    <!-- 6. screenshot2.png -->
                     <img src="screenshot2.png" alt="Bloqueio de Conteúdo" class="animated-asset">
                 </div>
             </article>
@@ -409,7 +446,6 @@
                     </p>
                 </div>
                 <div class="feature-media">
-                    <!-- 7. screenshot3.png -->
                     <img src="screenshot3.png" alt="Plano de 30 Dias" class="animated-asset">
                 </div>
             </article>
@@ -424,7 +460,6 @@
                     </p>
                 </div>
                 <div class="feature-media">
-                    <!-- 8. screenshot4.png -->
                     <img src="screenshot4.png" alt="Progresso e Motivação" class="animated-asset">
                 </div>
             </article>
@@ -438,7 +473,6 @@
                     </p>
                 </div>
                 <div class="feature-media">
-                    <!-- 9. screenshot5.png -->
                     <img src="screenshot5.png" alt="Personalize o Mascote Kai" class="animated-asset">
                 </div>
             </article>
@@ -453,7 +487,6 @@
                     </p>
                 </div>
                 <div class="feature-media">
-                    <!-- 10. screenshot6.png -->
                     <img src="screenshot6.png" alt="E-books e Microlearning" class="animated-asset">
                 </div>
             </article>
@@ -462,7 +495,6 @@
 
         <!-- RODAPÉ & MASCOTE -->
         <footer class="footer">
-            <!-- 11. gif.gif ou gif.png -->
             <div class="mascot-container">
                 <img src="gif.gif" onerror="this.onerror=null; this.src='gif.png';" alt="Mascote Kai Animado" class="mascot-gif">
             </div>
