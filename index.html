@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zenkai — Transforme seus Hábitos Digitais</title>
 
+    <!-- Google Fonts: Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Favicon (Mantido) -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- SEO & Social Preview -->
     <meta name="description" content="Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável com o Zenkai.">
     <meta property="og:title" content="Zenkai — Foco e Bem-estar Digital">
     <meta property="og:description" content="Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.">
@@ -18,15 +21,13 @@
 
     <style>
         :root {
-            --bg-blue: #0070f3;
-            --bg-blue-dark: #005bb5;
-            --accent-blue: #1cb0f6;
+            --bg-ivory: #FAF6EE;
+            --text-dark: #1E293B;
+            --text-muted-dark: #475569;
+            --card-blue-gradient: linear-gradient(135deg, #1cb0f6 0%, #005bb5 100%);
             --button-blue: #0268a6;
             --button-blue-hover: #0280cc;
             --white: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --card-border: rgba(255, 255, 255, 0.2);
-            --text-muted: rgba(255, 255, 255, 0.85);
             --radius-lg: 24px;
             --radius-md: 16px;
         }
@@ -39,9 +40,8 @@
         }
 
         body {
-            background-color: var(--bg-blue);
-            background-image: radial-gradient(circle at 50% 0%, #1cb0f6 0%, #005bb5 100%);
-            color: var(--white);
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
             min-height: 100vh;
             overflow-x: hidden;
             line-height: 1.5;
@@ -66,29 +66,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
+        /* LOGOTIPO DESTAQUE EM CIMA (SEM TEXTO) */
         .logo-img {
-            width: 50px;
+            width: 170px;
+            max-width: 80vw;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+            transition: transform 0.3s ease;
         }
 
-        .brand-title {
-            font-size: 2.8rem;
-            font-weight: 900;
-            letter-spacing: -0.5px;
+        .logo-img:hover {
+            transform: scale(1.04);
         }
 
         .hero-headline {
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 800;
             max-width: 620px;
             margin-bottom: 36px;
-            color: var(--text-muted);
+            color: var(--text-dark);
         }
 
         /* GRUPO DE BOTÕES DUOLINGO-STYLE */
@@ -114,7 +114,7 @@
             text-decoration: none;
             color: var(--white);
             background-color: var(--button-blue);
-            box-shadow: 0 5px 0 #00436d, 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 0 #00436d, 0 10px 20px rgba(2, 104, 166, 0.2);
             transition: all 0.15s ease-in-out;
             overflow: hidden;
             border: none;
@@ -139,16 +139,16 @@
             20%, 100% { transform: translateX(100%) rotate(25deg); }
         }
 
-        /* Animação do Clique (Press Down) */
+        /* Animação de Clique */
         .btn:hover {
             background-color: var(--button-blue-hover);
             transform: translateY(-2px);
-            box-shadow: 0 7px 0 #00436d, 0 12px 24px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 7px 0 #00436d, 0 12px 24px rgba(2, 104, 166, 0.3);
         }
 
         .btn:active {
             transform: translateY(4px);
-            box-shadow: 0 1px 0 #00436d, 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 1px 0 #00436d, 0 4px 10px rgba(2, 104, 166, 0.2);
         }
 
         .btn-icon {
@@ -177,7 +177,7 @@
 
         .animated-asset:hover {
             transform: scale(1.03) translateY(-6px);
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
         }
 
         @keyframes float {
@@ -185,7 +185,7 @@
             50% { transform: translateY(-12px); }
         }
 
-        /* SEÇÃO DE RECURSOS / FEATURES */
+        /* SEÇÃO DE RECURSOS / CARDS AZUIS */
         .features {
             display: flex;
             flex-direction: column;
@@ -194,17 +194,15 @@
         }
 
         .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: var(--card-blue-gradient);
             border-radius: var(--radius-lg);
             padding: 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0, 91, 181, 0.2);
+            color: var(--white);
         }
 
         .feature-card.reverse {
@@ -221,7 +219,8 @@
             font-weight: 900;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.25);
+            color: var(--white);
             padding: 6px 14px;
             border-radius: 20px;
             margin-bottom: 12px;
@@ -233,11 +232,12 @@
             line-height: 1.2;
             margin-bottom: 12px;
             text-transform: lowercase;
+            color: var(--white);
         }
 
         .feature-description {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.95);
             font-weight: 600;
         }
 
@@ -255,7 +255,7 @@
         .footer {
             margin-top: 80px;
             padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -288,14 +288,14 @@
         }
 
         .footer-link {
-            color: var(--white);
+            color: var(--text-dark);
             font-weight: 700;
             text-decoration: none;
-            transition: opacity 0.2s;
+            transition: color 0.2s;
         }
 
         .footer-link:hover {
-            opacity: 0.8;
+            color: var(--button-blue);
             text-decoration: underline;
         }
 
@@ -304,24 +304,24 @@
             flex-direction: column;
             gap: 6px;
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: var(--text-muted-dark);
             font-weight: 600;
         }
 
         .footer-contacts a {
-            color: var(--white);
+            color: var(--button-blue);
             text-decoration: none;
             font-weight: 700;
         }
 
-        /* RESPONSIVIDADE PARA CELULARES */
+        /* RESPONSIVIDADE */
         @media (max-width: 768px) {
-            .brand-title {
-                font-size: 2.2rem;
-            }
-
             .hero-headline {
                 font-size: 1.2rem;
+            }
+
+            .logo-img {
+                width: 140px;
             }
 
             .feature-card, .feature-card.reverse {
@@ -344,40 +344,48 @@
 
     <div class="container">
         
+        <!-- HERO SECTION -->
         <header class="hero">
+            <!-- 1. logotipo.png (Destaque em cima, sem texto) -->
             <div class="brand-header">
                 <img src="logotipo.png" alt="Zenkai Logo" class="logo-img">
-                <h1 class="brand-title">Zenkai</h1>
             </div>
 
             <p class="hero-headline">
                 Transforme seus hábitos digitais, supere distrações e desenvolva um foco inabalável.
             </p>
 
+            <!-- BOTÕES DE AÇÃO -->
             <div class="button-group">
+                <!-- 3. apple.png -->
                 <a href="https://apps.apple.com/app/id6790551584" target="_blank" rel="noopener" class="btn">
                     <img src="apple.png" alt="Apple Store" class="btn-icon">
                     Baixar na Apple Store
                 </a>
 
+                <!-- 4. android.png -->
                 <a href="https://play.google.com/store/apps/details?id=com.guardianbusiness.zenkai" target="_blank" rel="noopener" class="btn">
                     <img src="android.png" alt="Play Store" class="btn-icon">
                     Baixar na Play Store
                 </a>
 
+                <!-- 5. instagram.png -->
                 <a href="https://www.instagram.com/zenkai.br/" target="_blank" rel="noopener" class="btn">
                     <img src="instagram.png" alt="Instagram" class="btn-icon">
                     Siga no Instagram
                 </a>
             </div>
 
+            <!-- 2. screenshot1.png -->
             <div class="hero-mockup">
                 <img src="screenshot1.png" alt="Zenkai App Preview" class="animated-asset">
             </div>
         </header>
 
+        <!-- CARDS AZUIS DE RECURSOS -->
         <section class="features">
 
+            <!-- BLOCO 1: BLOQUEIO -->
             <article class="feature-card">
                 <div class="feature-content">
                     <span class="feature-badge">BLOQUEIO</span>
@@ -387,10 +395,12 @@
                     </p>
                 </div>
                 <div class="feature-media">
+                    <!-- 6. screenshot2.png -->
                     <img src="screenshot2.png" alt="Bloqueio de Conteúdo" class="animated-asset">
                 </div>
             </article>
 
+            <!-- BLOCO 2: MUDANÇA EM 30 DIAS -->
             <article class="feature-card reverse">
                 <div class="feature-content">
                     <h2 class="feature-title">mude sua vida em 30 dias</h2>
@@ -399,10 +409,12 @@
                     </p>
                 </div>
                 <div class="feature-media">
+                    <!-- 7. screenshot3.png -->
                     <img src="screenshot3.png" alt="Plano de 30 Dias" class="animated-asset">
                 </div>
             </article>
 
+            <!-- BLOCO 3: PROGRESSO -->
             <article class="feature-card">
                 <div class="feature-content">
                     <span class="feature-badge">PROGRESSO</span>
@@ -412,10 +424,12 @@
                     </p>
                 </div>
                 <div class="feature-media">
+                    <!-- 8. screenshot4.png -->
                     <img src="screenshot4.png" alt="Progresso e Motivação" class="animated-asset">
                 </div>
             </article>
 
+            <!-- BLOCO 4: PERSONALIZAÇÃO -->
             <article class="feature-card reverse">
                 <div class="feature-content">
                     <h2 class="feature-title">personalize o seu mascote</h2>
@@ -424,10 +438,12 @@
                     </p>
                 </div>
                 <div class="feature-media">
+                    <!-- 9. screenshot5.png -->
                     <img src="screenshot5.png" alt="Personalize o Mascote Kai" class="animated-asset">
                 </div>
             </article>
 
+            <!-- BLOCO 5: E-BOOKS -->
             <article class="feature-card">
                 <div class="feature-content">
                     <span class="feature-badge">E-BOOKS</span>
@@ -437,13 +453,16 @@
                     </p>
                 </div>
                 <div class="feature-media">
+                    <!-- 10. screenshot6.png -->
                     <img src="screenshot6.png" alt="E-books e Microlearning" class="animated-asset">
                 </div>
             </article>
 
         </section>
 
+        <!-- RODAPÉ & MASCOTE -->
         <footer class="footer">
+            <!-- 11. gif.gif ou gif.png -->
             <div class="mascot-container">
                 <img src="gif.gif" onerror="this.onerror=null; this.src='gif.png';" alt="Mascote Kai Animado" class="mascot-gif">
             </div>
